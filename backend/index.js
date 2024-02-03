@@ -11,7 +11,14 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 const PORT = 3001;
-app.use(cors());
+var corsOptions = {
+  origin: 'https://livescore.playbadminton.in',
+  optionsSuccessStatus: 200,
+  credentials: true
+}
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
