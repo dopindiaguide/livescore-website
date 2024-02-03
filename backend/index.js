@@ -32,7 +32,7 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions));
-// app.options('*', cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json());
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*');
