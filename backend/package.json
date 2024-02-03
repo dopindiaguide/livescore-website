@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "homepage": "https://livescore.playbadminton.in", // Add your base URL here
   "description": "",
   "main": "index.js",
   "scripts": {
