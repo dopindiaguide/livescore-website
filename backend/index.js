@@ -105,7 +105,7 @@ app.post('/login', (req, res) => {
 });
 app.post('/admin/login', (req, res) => {
   const { username, password } = req.body;
-  const sql = 'SELECT * FROM admins WHERE username = ? AND password = ?'; // Assuming your admin table is named 'Admins'
+  const sql = 'SELECT * FROM Admins WHERE username = ? AND password = ?'; // Assuming your admin table is named 'Admins'
 
   db.query(sql, [username, password], (err, results) => {
     if (err) {
@@ -274,7 +274,7 @@ app.put('/matches/:courtNumber', (req, res) => { // Add a PUT endpoint to update
 });
 
 app.get('/courts', (req, res) => {
-  db.query('SELECT * FROM matches', (err, result) => {
+  db.query('SELECT * FROM Matches', (err, result) => {
     if (err) throw err;
     res.send(result);
   });
