@@ -274,7 +274,7 @@ app.put('/matches/:courtNumber', (req, res) => { // Add a PUT endpoint to update
 });
 
 app.get('/courts', (req, res) => {
-  db.query('SELECT * FROM Matches', (err, result) => {
+  db.query('SELECT * FROM matches', (err, result) => {
     if (err) throw err;
     res.send(result);
   });
