@@ -19,18 +19,18 @@ app.use((req, res, next) => {
   next();
 });
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'u562946175_livescore'
-});
 // const db = mysql.createConnection({
 //   host: 'localhost',
-//   user: 'u562946175_livescore',
-//   password: 'Kanthu@2024',
+//   user: 'root',
+//   password: '',
 //   database: 'u562946175_livescore'
 // });
+const db = mysql.createConnection({
+  host: 'srv1237.hstgr.io',
+  user: 'u562946175_livescore',
+  password: 'Kanthu@2024',
+  database: 'u562946175_livescore'
+});
 
 db.connect((err) => {
   if (err) throw err;
