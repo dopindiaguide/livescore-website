@@ -9,7 +9,21 @@ const http = require('http');
 
 const app = express();
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+// const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ 
+  server,
+  verifyClient: (info, done) => {
+    const origin = info.origin || info.req.headers.origin;
+    
+    // Check if the origin is allowed
+    if (origin === 'https://livescore.playbadminton.in') {
+      done(true);
+    } else {
+      done(false, 403, 'Forbidden');
+    }
+  }
+});
+
 const PORT = 3001;
 var corsOptions = {
   origin: 'https://livescore.playbadminton.in',
