@@ -331,7 +331,7 @@ console.log(umpireName)
 
 app.get('/matches/livescore', (req, res) => {
   const sql = `
-    SELECT Matches.*, Tournaments.name AS tournamentName
+    SELECT matches.*, Tournaments.name AS tournamentName
     FROM Matches
     INNER JOIN Tournaments ON Matches.tournamentId = Tournaments.id
     WHERE Matches.status = 'live'
