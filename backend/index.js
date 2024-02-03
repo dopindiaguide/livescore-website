@@ -105,7 +105,7 @@ app.post('/login', (req, res) => {
 });
 app.post('/admin/login', (req, res) => {
   const { username, password } = req.body;
-  const sql = 'SELECT * FROM Admins WHERE username = ? AND password = ?'; // Assuming your admin table is named 'Admins'
+  const sql = 'SELECT * FROM admins WHERE username = ? AND password = ?'; // Assuming your admin table is named 'Admins'
 
   db.query(sql, [username, password], (err, results) => {
     if (err) {
